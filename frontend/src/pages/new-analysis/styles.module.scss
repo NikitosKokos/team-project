@@ -7,4 +7,14 @@
       font-weight: 600;
       margin: 0px 0px 20px 0px;
    }
+
+   &__main{
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+   }
+
+   &__left{
+      
+   }
 }
