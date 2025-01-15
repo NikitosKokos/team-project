@@ -1,0 +1,33 @@
+.topBar{
+   display: flex;
+   justify-content: center;
+   padding: 100px 0px 0px 0px;
+   &__list{
+      display: flex;
+      align-items: center;
+      gap: 32px;
+   }
+
+   &__item{
+
+   }
+
+   &__link{
+      font-weight: 600;
+      font-size: 20px;
+      color: #565356;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 32px;
+      border-radius: 27px;
+      transition: all .3s ease-in-out;
+
+      &_active{
+         background: #211b21;
+         color: #f1f1f1;
+         cursor: default;
+      }
+   }
+}

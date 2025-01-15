@@ -1,0 +1,52 @@
+.chooseStudent{
+   &__title{
+      font-weight: 600;
+      font-size: 26px;
+      color: #f1f1f1;
+      margin: 0px 0px 20px 0px;
+   }
+   &__main{
+      display: flex;
+      align-items: flex-end;
+   }
+
+   &__wrapper{
+      position: relative;
+   }
+
+   &__label{
+      height: 50px;
+      background: #211b21;
+      color: #565356;
+      border-radius: 16px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 283px;
+
+      svg{
+         width: 16px;
+         height: 10px;
+      }
+   }
+
+   &__dropdown{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transform: translateY(100%);
+      background: #000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s ease-in-out;
+
+      &.active{
+         opacity: 1;
+         visibility: visible;
+      }
+   }
+
+   
+}

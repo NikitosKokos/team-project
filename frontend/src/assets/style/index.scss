@@ -1,0 +1,44 @@
+// base
+@use './global' as *;
+@forward './fonts';
+@forward './zeroing';
+@forward './main';
+// global styles
+._container {
+   max-width: $width + px;
+   margin: 0 auto;
+   padding: 0 15px;
+   @media (max-width: $md1+px) {
+      max-width: 970px;
+   }
+   @media (max-width: $md2+px) {
+      max-width: 750px;
+   }
+   @media (max-width: $md3+px) {
+      max-width: none;
+   }
+}
+
+.wrapper {
+   width: 100%;
+   min-height: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+}
+
+#root{
+   width: 100%;
+   height: 100%;
+}
+
+.page {
+   flex: 1 1 auto;
+}
+
+body {
+   // background: #000;
+   &._lock {
+      overflow: hidden;
+   }
+}
