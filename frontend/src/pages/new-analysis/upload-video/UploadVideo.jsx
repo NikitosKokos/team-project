@@ -13,8 +13,6 @@ const UploadVideo = () => {
    return (
       <div className={s.uploadVideo}>
          <div className={s.uploadVideo__body}>
-            <div className={s.uploadVideo__title}>Upload a video</div>
-
             <label htmlFor="videoUpload" className={s.uploadButton}>
                <div className={s.uploadIcon}>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

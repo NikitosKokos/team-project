@@ -1,3 +1,10 @@
 .newAnalysis{
-   background: #242124;
+   // background: #242124;
+
+   &__title{
+      color: #f1f1f1;
+      font-size: 26px;
+      font-weight: 600;
+      margin: 0px 0px 20px 0px;
+   }
 }

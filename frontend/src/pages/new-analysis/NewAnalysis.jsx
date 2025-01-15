@@ -6,6 +6,7 @@ import ChooseStudent from './choose-student/ChooseStudent';
 const NewAnalysis = () => {
    return (
       <div className={s.newAnalysis}>
+         <div className={s.newAnalysis__title}>Create a new analysis</div>
          <ChooseStudent />
          <UploadVideo />
       </div>
