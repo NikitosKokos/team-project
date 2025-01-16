@@ -1,5 +1,6 @@
 .newAnalysis{
    // background: #242124;
+   height: 100%;
 
    &__title{
       color: #f1f1f1;
@@ -12,9 +13,14 @@
       display: flex;
       justify-content: space-between;
       gap: 40px;
+      height: 100%;
    }
 
    &__left{
+      
+   }
+
+   &__submit{
       
    }
 }

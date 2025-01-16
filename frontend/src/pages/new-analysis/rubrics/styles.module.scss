@@ -14,11 +14,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 20px;
+      padding: 30px 20px;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+
+      &.active{
+         background: #E98EED;
+      }
    }
 
    &__title{
-      font-size: 30px;
+      font-size: 22px;
       font-weight: 600;
       color: #f1f1f1;
       line-height: 1.2;

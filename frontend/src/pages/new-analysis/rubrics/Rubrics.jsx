@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import s from './styles.module.scss';
 
-const Rubrics = () => {
+const Rubrics = ({ currentRubric, setCurrentRubric }) => {
    const [rubrics, setRubrics] = useState([
       { id: 0, name: 'Start' },
       { id: 1, name: 'Sprint' },
@@ -13,11 +13,18 @@ const Rubrics = () => {
       { id: 7, name: 'Javelin Throw' },
       { id: 8, name: 'Relay Race' },
    ]);
+
+   const handleRubricClick = (rubric) => {
+      setCurrentRubric(rubric);
+   };
    return (
       <div className={s.rubrics}>
          <ul className={s.rubrics__list}>
             {rubrics.map(({ id, name }) => (
-               <li key={id} className={s.rubrics__item}>
+               <li
+                  key={id}
+                  onClick={() => handleRubricClick({ id, name })}
+                  className={`${s.rubrics__item} ${currentRubric?.id === id ? s.active : ''}`}>
                   <div className={s.rubrics__title}>{name}</div>
                </li>
             ))}

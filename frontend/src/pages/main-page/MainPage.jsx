@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router';
 import TopBar from './top-bar/TopBar.jsx';
 import NewAnalysis from '../new-analysis/NewAnalysis.jsx';
@@ -10,7 +10,7 @@ const MainPage = () => {
    return (
       <div className="wrapper">
          <div className={s.mainPage}>
-            <div className="_container">
+            <div className={`${s.mainPage__container} _container`}>
                <TopBar />
                <Routes>
                   <Route path="/" element={<NewAnalysis />} />
