@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import s from './styles.module.scss';
 
-const ChooseStudent = () => {
+const ChooseStudent = ({ setIsUserChosen }) => {
    const [students, setStudents] = useState([
       { id: 1, firstName: 'John', lastName: 'Smith', isSelected: false },
       { id: 2, firstName: 'Mykyta', lastName: 'Smith', isSelected: false },
@@ -53,7 +53,7 @@ const ChooseStudent = () => {
          isSelected: el.id === id,
       }));
       setStudents(newStudents);
-
+      setIsUserChosen(true);
       setIsDropdownOpen(false);
    };
 

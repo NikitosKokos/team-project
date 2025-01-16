@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './styles.module.scss';
 
-const VideoTicks = ({ duration }) => {
+const VideoTicks = ({ duration, startScrubbing }) => {
    const formatTime = (time) => {
       const minutes = Math.floor(time / 60);
       const seconds = Math.floor(time % 60)
@@ -27,7 +27,11 @@ const VideoTicks = ({ duration }) => {
 
       return tickElements;
    };
-   return <div className={s.videoTicks}>{renderTicks()}</div>;
+   return (
+      <div className={s.videoTicks} onMouseDown={startScrubbing} onTouchStart={startScrubbing}>
+         <div className={s.videoTicks__body}>{renderTicks()}</div>
+      </div>
+   );
 };
 
 export default VideoTicks;
