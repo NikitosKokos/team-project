@@ -12,6 +12,7 @@ const NewAnalysis = () => {
    const [fileName, setFileName] = useState(null);
    const [isUserChosen, setIsUserChosen] = useState(false);
    const [isStagesSaved, setIsStagesSaved] = useState(false);
+   const [isLoading, setIsLoading] = useState(false);
    const [stages, setStages] = useState([
       { id: 0, name: 'Start' },
       { id: 1, name: 'Sprint' },
@@ -23,6 +24,38 @@ const NewAnalysis = () => {
       { id: 7, name: 'Javelin Throw' },
       { id: 8, name: 'Relay Race' },
    ]);
+   const [rubric, setRubric] = useState({
+      // id: 2,
+      // name: 'Shot Put',
+      video_id: '',
+      stages: [
+         {
+            stage_name: 'stage1',
+            start_time: null,
+            end_time: null,
+         },
+         {
+            stage_name: 'stage2',
+            start_time: null,
+            end_time: null,
+         },
+         {
+            stage_name: 'stage3',
+            start_time: null,
+            end_time: null,
+         },
+         {
+            stage_name: 'stage4',
+            start_time: null,
+            end_time: null,
+         },
+         {
+            stage_name: 'stage5',
+            start_time: null,
+            end_time: null,
+         },
+      ],
+   });
 
    const handleVideoUpload = (file) => {
       const fileURL = URL.createObjectURL(file);
@@ -30,14 +63,53 @@ const NewAnalysis = () => {
    };
 
    const handleSubmit = () => {
-      if (isStagesSaved) {
-         // axios logic
-      } else {
-         if (currentRubric && fileName && isUserChosen) {
-            console.log(fileName);
+      if (currentRubric && fileName && isUserChosen) {
+         console.log(fileName);
 
-            setShowVideoEditor(true);
+         setShowVideoEditor(true);
+      }
+   };
+
+   const handleAnalyze = async () => {
+      if (isStagesSaved) {
+         const newRubric = { ...rubric, video_id: fileName };
+         setRubric(newRubric);
+         setIsLoading(true);
+         console.log(newRubric);
+
+         // axios logic
+         async function getSasForFile(filename) {
+            const baseUrl = 'https://evaluation-scripts.azurewebsites.net/api/get_sas';
+            const url = `${baseUrl}?filename=${encodeURIComponent(filename)}`;
+
+            const response = await fetch(url, { method: 'GET' });
+            if (!response.ok) {
+               throw new Error(`SAS error: HTTP ${response.status}`);
+            }
+            const data = await response.json();
+            return data.sas_url; // e.g. "https://account.blob.core.windows.net/container/filename.mp4?someSAS"
+
+            async function uploadFile(file) {
+               const sasUrl = await getSasForFile(file.name);
+
+               // PUT the file
+               const res = await fetch(sasUrl, {
+                  method: 'PUT',
+                  headers: {
+                     'x-ms-blob-type': 'BlockBlob',
+                     'Content-Type': file.type,
+                  },
+                  body: file,
+               });
+               if (!res.ok) {
+                  throw new Error(`Upload failed: ${res.status}`);
+               }
+               console.log('Upload success to', sasUrl);
+               return sasUrl; // store for future reference
+            }
          }
+
+         await getSasForFile(videoSrc);
       }
    };
 
@@ -46,14 +118,29 @@ const NewAnalysis = () => {
          <div className={s.newAnalysis__main}>
             <div className={s.newAnalysis__left}>
                <div className={s.newAnalysis__title}>Create a new analysis</div>
-               <ChooseStudent setIsUserChosen={setIsUserChosen} />
-               <UploadVideo onUpload={handleVideoUpload} setFileName={setFileName} />
-               <button className={s.newAnalysis__submit} onClick={handleSubmit}>
-                  {!isStagesSaved ? 'Submit' : 'Analyze'}
-               </button>
+               {!showVideoEditor ? (
+                  <>
+                     <ChooseStudent setIsUserChosen={setIsUserChosen} />
+                     <UploadVideo onUpload={handleVideoUpload} setFileName={setFileName} />
+                     <button className={s.newAnalysis__submit} onClick={handleSubmit}>
+                        Submit
+                     </button>
+                  </>
+               ) : (
+                  <button
+                     className={`${s.newAnalysis__submit} ${isLoading ? s.disabled : ''}`}
+                     onClick={handleAnalyze}>
+                     {!isLoading ? 'Analyze' : 'Loading...'}
+                  </button>
+               )}
             </div>
             {showVideoEditor ? (
-               <VideoEditor videoSrc={videoSrc} setIsStagesSaved={setIsStagesSaved} />
+               <VideoEditor
+                  videoSrc={videoSrc}
+                  setIsStagesSaved={setIsStagesSaved}
+                  rubric={rubric}
+                  setRubric={setRubric}
+               />
             ) : (
                <Rubrics currentRubric={currentRubric} setCurrentRubric={setCurrentRubric} />
             )}

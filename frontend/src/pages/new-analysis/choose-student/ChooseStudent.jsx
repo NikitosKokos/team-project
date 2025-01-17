@@ -3,11 +3,9 @@ import s from './styles.module.scss';
 
 const ChooseStudent = ({ setIsUserChosen }) => {
    const [students, setStudents] = useState([
-      { id: 1, firstName: 'John', lastName: 'Smith', isSelected: false },
-      { id: 2, firstName: 'Mykyta', lastName: 'Smith', isSelected: false },
-      { id: 3, firstName: 'Cezar', lastName: 'Smith', isSelected: false },
-      { id: 4, firstName: 'Danylo', lastName: 'Smith', isSelected: false },
-      { id: 5, firstName: 'John', lastName: 'Smith', isSelected: false },
+      { id: 1, firstName: 'Mykyta', lastName: 'Tsykunov', isSelected: false },
+      { id: 2, firstName: 'Cezar', lastName: 'Sîrbu', isSelected: false },
+      { id: 3, firstName: 'Danylo', lastName: 'Bordunov', isSelected: false },
    ]);
    const [searchTerm, setSearchTerm] = useState('');
    const [title, setTitle] = useState('Choose a student');

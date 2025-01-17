@@ -34,7 +34,7 @@
    }
 
    &__left{
-      
+      min-width: 280px;
    }
 
    &__submit{
@@ -51,8 +51,13 @@
       border-color: transparent;
       font-size: 18px;
       font-weight: 600;
-      transition: --b1 .5s ease-in-out, --b2 .5s ease-in-out, --a .4s linear;
+      transition: --b1 .5s ease-in-out, --b2 .5s ease-in-out, --a .4s linear, opacity .3s ease-in-out,;
       background: linear-gradient(#1A171A, #1A171A) padding-box, linear-gradient(var(--a), var(--b1) 0%, var(--b2) 100%) border-box;
+
+      &.disabled{
+         pointer-events: none;
+         opacity: 0.8;
+      }
 
       @media(any-hover: hover){
          &:hover{

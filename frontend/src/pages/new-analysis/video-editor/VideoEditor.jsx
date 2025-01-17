@@ -4,40 +4,9 @@ import VideoTicks from './video-ticks/VideoTicks';
 import VideoInfo from './video-info/VideoInfo';
 import VideoStages from './video-stages/VideoStages';
 
-const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
+const VideoEditor = ({ videoSrc, setIsStagesSaved, rubric, setRubric }) => {
    const [currentStage, setCurrentStage] = useState(0);
-   const [rubric, setRubric] = useState({
-      // id: 2,
-      // name: 'Shot Put',
-      video_id: '',
-      stages: [
-         {
-            stage_name: 'stage1',
-            start_time: null,
-            end_time: null,
-         },
-         {
-            stage_name: 'stage2',
-            start_time: null,
-            end_time: null,
-         },
-         {
-            stage_name: 'stage3',
-            start_time: null,
-            end_time: null,
-         },
-         {
-            stage_name: 'stage4',
-            start_time: null,
-            end_time: null,
-         },
-         {
-            stage_name: 'stage5',
-            start_time: null,
-            end_time: null,
-         },
-      ],
-   });
+
    const videoRef = useRef(null);
    const trackRef = useRef(null);
    const [progress, setProgress] = useState(0);
@@ -53,6 +22,8 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
    const minFrameSelect = 10;
    const [videoLength, setVideoLength] = useState(null);
    const [lastChange, setLastChange] = useState(null);
+   const [isPlaying, setIsPlaying] = useState(false);
+   const [isPlayingChanged, setIsPlayingChanged] = useState(false);
 
    const saveStage = () => {
       const newStages = rubric.stages.map((stage, index) => {
@@ -216,6 +187,10 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
          const frameTime = 1 / frameRate; // Time per frame in seconds
 
          switch (e.key.toLowerCase()) {
+            case ' ': // Space key to toggle play/pause
+               e.preventDefault(); // Prevent default scrolling behavior when pressing space
+               togglePlayPause();
+               break;
             case 'a': // Move backward
             case 'arrowleft':
                video.currentTime = Math.max(video.currentTime - frameTime * shiftMultiplier, 0);
@@ -296,11 +271,11 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
       if (type === 'start') {
          setIsDraggingStart(true);
          setLastChange('start');
-         console.log('set start');
+         // console.log('set start');
       } else if (type === 'end') {
          setIsDraggingEnd(true);
          setLastChange('end');
-         console.log('set end');
+         // console.log('set end');
       }
    };
 
@@ -339,6 +314,25 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
       return (frame / totalFrames) * 100;
    };
 
+   const togglePlayPause = () => {
+      const video = videoRef.current;
+
+      if (video) {
+         setIsPlayingChanged(false);
+         setIsPlaying((prevIsPlaying) => {
+            if (prevIsPlaying) {
+               video.pause();
+            } else {
+               video.play();
+            }
+            return !prevIsPlaying; // Toggle the isPlaying state
+         });
+         setTimeout(() => {
+            setIsPlayingChanged(true);
+         }, 0);
+      }
+   };
+
    return (
       <div className={s.videoEditor}>
          <VideoStages
@@ -351,7 +345,55 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
          />
          <div className={s.videoEditor__body}>
             <VideoInfo />
-            <video ref={videoRef} src={videoSrc} controls className={s.videoEditor__video}></video>
+            <video
+               ref={videoRef}
+               src={videoSrc}
+               // controls
+               className={s.videoEditor__video}
+               controls={false}></video>
+            <div className={s.videoEditor__controls} onClick={togglePlayPause}>
+               <button
+                  className={`${s.videoEditor__playPause} ${isPlayingChanged ? s.active : ''}`}>
+                  {isPlaying ? (
+                     <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           fill="#f1f1f1"
+                           d="M6 3L20 12L6 21V3Z"
+                           strokeWidth="2"
+                           strokeLinecap="round"
+                           strokeLinejoin="round"
+                        />
+                     </svg>
+                  ) : (
+                     <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           fill="#f1f1f1"
+                           d="M17 4H15C14.4477 4 14 4.44772 14 5V19C14 19.5523 14.4477 20 15 20H17C17.5523 20 18 19.5523 18 19V5C18 4.44772 17.5523 4 17 4Z"
+                           strokeWidth="2"
+                           strokeLinecap="round"
+                           strokeLinejoin="round"
+                        />
+                        <path
+                           fill="#f1f1f1"
+                           d="M9 4H7C6.44772 4 6 4.44772 6 5V19C6 19.5523 6.44772 20 7 20H9C9.55228 20 10 19.5523 10 19V5C10 4.44772 9.55228 4 9 4Z"
+                           strokeWidth="2"
+                           strokeLinecap="round"
+                           strokeLinejoin="round"
+                        />
+                     </svg>
+                  )}
+               </button>
+            </div>
          </div>
          <VideoTicks duration={duration} startScrubbing={startScrubbing} />
          <div ref={trackRef} className={s.videoEditor__track}>
