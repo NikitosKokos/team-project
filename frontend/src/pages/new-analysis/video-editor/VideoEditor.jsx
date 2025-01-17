@@ -66,7 +66,7 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
       newRubric.stages.map((stage) => {
          if (stage.start_time !== null && stage.end_time !== null) rubricSaved++;
       });
-      console.log(rubricSaved);
+      // console.log(rubricSaved);
       if (rubricSaved === newStages.length) {
          setIsStagesSaved(true);
       }
@@ -74,6 +74,7 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
    };
 
    const handleStageChange = (index) => {
+      setLastChange(null);
       const newCurrentStage = rubric.stages[index];
       if (newCurrentStage.start_time !== null && newCurrentStage.end_time !== null) {
          setStartFrame(newCurrentStage.start_time);
@@ -227,6 +228,22 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
                );
                break;
             case 'b': // create a breakpoint
+               if (lastChange) {
+                  const frameTime = 1 / frameRate; // Time per frame in seconds
+                  const currentFrame = Math.round(video.currentTime * frameRate); // Current frame
+
+                  if (lastChange === 'start') {
+                     if (endFrame - minFrameSelect > currentFrame) {
+                        setStartFrame(currentFrame);
+                     }
+                  } else if (lastChange === 'end') {
+                     // setEndFrame(currentFrame);
+                     if (startFrame + minFrameSelect < currentFrame) {
+                        setEndFrame(currentFrame);
+                     }
+                  }
+               }
+               break;
             default:
                break;
          }
@@ -236,7 +253,7 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
       return () => {
          window.removeEventListener('keydown', handleKeyDown);
       };
-   }, [frameRate, duration]);
+   }, [frameRate, duration, lastChange]);
 
    useEffect(() => {
       if (isScrubbing) {
@@ -279,9 +296,11 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
       if (type === 'start') {
          setIsDraggingStart(true);
          setLastChange('start');
+         console.log('set start');
       } else if (type === 'end') {
          setIsDraggingEnd(true);
          setLastChange('end');
+         console.log('set end');
       }
    };
 
@@ -312,7 +331,7 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved }) => {
    const handleDragEnd = () => {
       setIsDraggingStart(false);
       setIsDraggingEnd(false);
-      console.log(`Start Frame: ${startFrame}, End Frame: ${endFrame}`);
+      // console.log(`Start Frame: ${startFrame}, End Frame: ${endFrame}`);
    };
 
    const calculatePositionPercentage = (frame) => {

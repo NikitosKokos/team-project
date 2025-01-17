@@ -195,15 +195,16 @@
       justify-content: flex-start;
       align-items: center;
       color: #f1f1f1;
+      transition: all .3s ease-in-out;
 
       &.active{
          cursor: default;
-         background: #5A6B82;
+         background: #292C32;
       }
 
       @media(any-hover: hover){
          &:hover{
-            background: #5A6B82;
+            background: #292C32;
          }
       }
    }
