@@ -1,0 +1,59 @@
+.videoStages{
+   width: 100%;
+   margin: 0px 0px 12px 0px;
+   &__body{
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__list{
+      display: flex;
+      align-items: center;
+      background: #262626;
+      gap: 10px;
+      border-radius: 30px;
+      padding: 10px;
+   }
+
+   &__item{
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid #f1f1f1;
+      font-weight: 700;
+      font-size: 16px;
+      color: #f1f1f1;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+
+      &.completed{
+         background: #E98EED;
+         border-color: #E98EED;
+         color: #f1f1f1;
+      }
+
+      &.active{
+         background: transparent;
+         color: #E98EED;
+         border-color: #E98EED;
+      }
+
+      
+   }
+
+   &__save{
+      height: 60px;
+      padding: 0 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #f1f1f1;
+      background: #262626;
+      border-radius: 30px;
+   }
+}

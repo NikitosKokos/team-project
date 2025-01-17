@@ -1,0 +1,52 @@
+.videoTicks{
+   position: relative;
+   width: 100%;
+   height: 30px;
+   z-index: 11;
+   background-color: #303030;
+   // border-bottom: 1px solid rgba(35, 35, 35, 0.3);
+   // border-radius: 5px;
+   // cursor: pointer;
+
+   &__body{
+
+   }
+
+
+   &__tick {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background-color: #555;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      pointer-events: none;
+      user-select: none;
+      &:first-child{
+         span{
+            transform: translateX(calc(50% + 2px));
+            padding: 4px 0 4px 4px;
+         }
+      }
+
+      &:last-child{
+         transform: translateX(-1px);
+         span{
+            transform: translateX(calc(-50% - 2px));
+            padding: 4px 4px 4px 0;
+         }
+      }
+   }
+
+   &__timestamp {
+      font-size: 10px;
+      color: #aaa;
+      position: absolute;
+      top: 0px;
+      background-color: #303030;
+      padding: 4px 0;
+      // transform: translateX(-50%);
+   }
+}

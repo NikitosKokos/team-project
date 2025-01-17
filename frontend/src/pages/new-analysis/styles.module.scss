@@ -1,0 +1,67 @@
+@property --b1 {
+   syntax: '<color>';
+   inherits: false;
+   initial-value: #2C919D;
+}
+   @property --b2 {
+   syntax: '<color>';
+   inherits: false;
+   initial-value: #9D2C8A;
+}
+
+@property --a {
+   syntax: '<angle>';
+   inherits: false;
+   initial-value: 90deg;
+ }
+
+.newAnalysis{
+   // background: #242124;
+   height: 100%;
+
+   &__title{
+      color: #f1f1f1;
+      font-size: 26px;
+      font-weight: 600;
+      margin: 0px 0px 20px 0px;
+   }
+
+   &__main{
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      height: 100%;
+   }
+
+   &__left{
+      
+   }
+
+   &__submit{
+      margin: 20px 0px 0px 0px;
+      --b1: #2C919D;
+      --b2: #9D2C8A;
+      --a: 90deg;
+      border-radius: 27px;
+      padding: 0px 33px;
+      height: 50px;
+      color: #f5f5f5;
+      border-width: 3px;
+      border-style: solid;
+      border-color: transparent;
+      font-size: 18px;
+      font-weight: 600;
+      transition: --b1 .5s ease-in-out, --b2 .5s ease-in-out, --a .4s linear;
+      background: linear-gradient(#1A171A, #1A171A) padding-box, linear-gradient(var(--a), var(--b1) 0%, var(--b2) 100%) border-box;
+
+      @media(any-hover: hover){
+         &:hover{
+            // --b1: #9D2C8A;
+            // --b2: #2C919D;
+            --a: -90deg;
+         }
+      }
+   }
+
+}
+

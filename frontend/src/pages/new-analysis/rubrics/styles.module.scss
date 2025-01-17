@@ -1,0 +1,33 @@
+.rubrics{
+   flex: 1 1 100%;
+
+   &__list{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+   }
+
+   &__item{
+      background: #15181E;
+      height: 240px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+
+      &.active{
+         background: #E98EED;
+      }
+   }
+
+   &__title{
+      font-size: 22px;
+      font-weight: 600;
+      color: #f1f1f1;
+      line-height: 1.2;
+      text-align: center;
+   }
+}

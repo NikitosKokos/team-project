@@ -1,0 +1,6 @@
+@use './global' as *;
+
+@include font('Manrope', 'Manrope-Bold', '700', 'normal');
+@include font('Manrope', 'Manrope-Medium', '500', 'normal');
+@include font('Manrope', 'Manrope-Regular', '400', 'normal');
+@include font('Manrope', 'Manrope-SemiBold', '600', 'normal');
