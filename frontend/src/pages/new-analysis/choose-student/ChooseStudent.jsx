@@ -6,6 +6,9 @@ const ChooseStudent = ({ setIsUserChosen }) => {
       { id: 1, firstName: 'Mykyta', lastName: 'Tsykunov', isSelected: false },
       { id: 2, firstName: 'Cezar', lastName: 'Sîrbu', isSelected: false },
       { id: 3, firstName: 'Danylo', lastName: 'Bordunov', isSelected: false },
+      { id: 4, firstName: 'Danylo', lastName: 'Bordunov', isSelected: false },
+      { id: 5, firstName: 'Danylo', lastName: 'Bordunov', isSelected: false },
+      { id: 6, firstName: 'Danylo', lastName: 'Bordunov', isSelected: false },
    ]);
    const [searchTerm, setSearchTerm] = useState('');
    const [title, setTitle] = useState('Choose a student');
@@ -19,12 +22,14 @@ const ChooseStudent = ({ setIsUserChosen }) => {
       `${student.firstName} ${student.lastName}`.toLowerCase().includes(searchTerm.toLowerCase()),
    );
 
-   const handleAddStudent = () => {
+   const handleAddStudent = (e) => {
+      e.preventDefault();
       if (firstName.trim() !== '' && lastName.trim() !== '') {
          setStudents([
             ...students,
             { id: Date.now(), firstName: firstName.trim(), lastName: lastName.trim() },
          ]);
+         setSearchTerm('');
          setNewStudentIsDropdownOpen(false);
       }
    };
@@ -61,7 +66,9 @@ const ChooseStudent = ({ setIsUserChosen }) => {
       setLastName('');
    };
 
-   const handleBack = () => {
+   const handleBack = (e) => {
+      e.preventDefault();
+      setSearchTerm('');
       setNewStudentIsDropdownOpen(false);
    };
 
@@ -124,7 +131,7 @@ const ChooseStudent = ({ setIsUserChosen }) => {
                         <span></span>Add a new student
                      </button>
                   </div>
-                  <div
+                  <form
                      className={`${s.chooseStudent__new} ${
                         isNewStudentDropdownOpen ? s.active : ''
                      }`}>
@@ -150,14 +157,17 @@ const ChooseStudent = ({ setIsUserChosen }) => {
                         </div>
                      </div>
                      <div className={s.chooseStudent__buttons}>
+                        <button
+                           type="submit"
+                           onClick={handleAddStudent}
+                           className={s.chooseStudent__btn}>
+                           Save
+                        </button>
                         <button onClick={handleBack} className={s.chooseStudent__btnBack}>
                            Back
                         </button>
-                        <button onClick={handleAddStudent} className={s.chooseStudent__btn}>
-                           Save
-                        </button>
                      </div>
-                  </div>
+                  </form>
                </div>
             </div>
          </div>

@@ -25,13 +25,15 @@
 
    &__label{
       height: 50px;
-      background: #3D4046;
+      // background: #3D4046;
+      background: rgb(24 24 27);
       color: #f1f1f1;
       border-radius: 20px;
       width: 283px;
       font-size: 18px;
       font-weight: 500;
       cursor: pointer;
+      transition: background .3s ease-in-out;
 
 
       svg{
@@ -43,6 +45,12 @@
 
          path{
             fill: #f1f1f1;
+         }
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            background: #1F1F23;
          }
       }
    }
@@ -69,13 +77,14 @@
       left: 0;
       width: 100%;
       // transform: translateY(100%);
-      background: #3D4046;
+      // background: #3D4046;
+      background: rgb(24 24 27);
       border-radius: 20px;
       opacity: 0;
       visibility: hidden;
       transition: all .3s ease-in-out;
       z-index: 11;
-      padding: 24px;
+      padding: 24px 24px 20px 24px;
 
       &.active{
          opacity: 1;
@@ -87,7 +96,7 @@
       font-size: 18px;
       color: #f1f1f1;
       font-weight: 500;
-      margin: 0px 0px 20px 0px;
+      margin: 0px 0px 18px 0px;
    }
 
    &__inputNewWrapper{
@@ -99,7 +108,7 @@
    &__inputs{
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
    }
 
    &__inputNew{
@@ -108,22 +117,28 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: #15181E;
-      color: #f1f1f1;
-      padding: 0 24px;
-      border-radius: 8px;
+      background: transparent;
+      color: #eee;
+      border: 2px solid rgba(238, 238, 238, 0.15);
+      padding: 0 20px;
+      border-radius: 12px;
       font-size: 16px;
       font-weight: 500;
+      transition: all .3s ease-in-out;
+
       &::placeholder{
-         color: #f1f1f1;
+         color: #aaa;
+      }
+
+      &:focus{
+         border-color: rgba(238, 238, 238, 0.67);
       }
    }
 
    &__buttons{
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 10px 0px 0px 0px;
+      flex-direction: column;
+      margin: 16px 0px 0px 0px;
       gap: 10px;
    }
 
@@ -131,22 +146,37 @@
       height: 48px;
       padding: 0 30px;
       background: #292C32;
-      border-radius: 8px;
+      border-radius: 12px;
       font-size: 16px;
       font-weight: 500;
       color: #f1f1f1;
       flex: 1 1 auto;
+      transition: all .3s ease-in-out;
+
+      @media(any-hover: hover){
+         &:hover{
+            background: #1F2228;
+         }
+      }
    }
 
    &__btn{
       flex: 1 1 auto;
       height: 48px;
       padding: 0 30px;
-      background: #15181E;
-      border-radius: 8px;
+      // background: #15181E;
+      background: #099DB4;
+      border-radius: 12px;
       font-size: 16px;
       font-weight: 500;
       color: #f1f1f1;
+      transition: all .3s ease-in-out;
+
+      @media(any-hover: hover){
+         &:hover{
+            background: #1DB1C8;
+         }
+      }
    }
 
    &__search{
@@ -169,7 +199,8 @@
       padding: 0 54px 0 24px;
       width: 100%;
       height: 100%;
-      background: #3D4046;
+      background: #18181b;
+      background: rgb(24 24 27);
       color: #eee;
       font-size: 18px;
       border-radius: 20px 20px 0 0;
@@ -182,7 +213,28 @@
    &__list{
       max-height: 176px;
       overflow: auto;
-      background: #3D4046;
+      // background: #3D4046;
+      background: rgb(24 24 27);
+
+      &::selection {
+         -webkit-text-fill-color: rgb(24 24 27);
+         color: rgb(24 24 27);
+         background-color: #1F1F23; 
+      }
+      
+      &::-webkit-scrollbar {
+         width: 12px;
+      }
+      &::-webkit-scrollbar-track {
+         background: rgb(24 24 27);
+      }
+      &::-webkit-scrollbar-thumb {
+         background: #1F1F23;
+         border-radius: 6px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+         background: #1F1F23;
+      }
    }
 
    &__item{
@@ -198,13 +250,13 @@
       transition: all .3s ease-in-out;
 
       &.active{
-         cursor: default;
-         background: #292C32;
+         color: #1DB1C8;
+         pointer-events: none;
       }
 
       @media(any-hover: hover){
          &:hover{
-            background: #292C32;
+            color: #1DB1C8;
          }
       }
    }
@@ -217,7 +269,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      color: #f1f1f1;
+      color: #eee;
    }
 
    &__add{
@@ -228,9 +280,17 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      color: #eee;
+      color: #aaa;
       border-radius: 0 0 20px 20px;
-      background: #3D4046;
+      // background: #3D4046;
+      background: rgb(24 24 27);
+      transition: all .3s ease-in-out;
+
+      @media(any-hover: hover){
+         &:hover{
+            color: #ddd;
+         }
+      }
       
       span{
          position: relative;

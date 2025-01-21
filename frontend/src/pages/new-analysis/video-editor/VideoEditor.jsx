@@ -24,6 +24,7 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved, rubric, setRubric }) => {
    const [lastChange, setLastChange] = useState(null);
    const [isPlaying, setIsPlaying] = useState(false);
    const [isPlayingChanged, setIsPlayingChanged] = useState(false);
+   const [currentTime, setCurrentTime] = useState(0);
 
    const saveStage = () => {
       const newStages = rubric.stages.map((stage, index) => {
@@ -86,7 +87,9 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved, rubric, setRubric }) => {
          const video = videoRef.current;
          if (video && !isScrubbing) {
             const percentage = (video.currentTime / video.duration) * 100;
-            setProgress(percentage);
+            if (!isDraggingStart && !isDraggingEnd) {
+               setProgress(percentage);
+            }
          }
       };
 
@@ -100,7 +103,7 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved, rubric, setRubric }) => {
             video.removeEventListener('timeupdate', updateProgress);
          }
       };
-   }, [isScrubbing]);
+   }, [isScrubbing, isDraggingStart, isDraggingEnd]);
 
    const handleScrub = (e) => {
       const track = trackRef.current;
@@ -112,7 +115,12 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved, rubric, setRubric }) => {
          const clickX = Math.max(0, Math.min(clientX - rect.left, rect.width));
          const clickPercentage = clickX / rect.width;
          video.currentTime = clickPercentage * video.duration;
-         setProgress(clickPercentage * 100);
+         if (!isDraggingStart && !isDraggingEnd) {
+            setProgress(clickPercentage * 100);
+            const newCurrentTime = video.currentTime;
+
+            setCurrentTime(newCurrentTime);
+         }
       }
    };
 
@@ -147,7 +155,9 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved, rubric, setRubric }) => {
          const video = videoRef.current;
          if (video) {
             const percentage = (video.currentTime / video.duration) * 100;
-            setProgress(percentage);
+            // if (!isDraggingStart && !isDraggingEnd) {
+            //    console.log(isDraggingStart, isDraggingEnd);
+            // }
          }
       };
 
@@ -205,16 +215,16 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved, rubric, setRubric }) => {
             case 'b': // create a breakpoint
                if (lastChange) {
                   const frameTime = 1 / frameRate; // Time per frame in seconds
-                  const currentFrame = Math.round(video.currentTime * frameRate); // Current frame
+                  const newCurrentFrame = Math.round(video.currentTime * frameRate); // Current frame
 
                   if (lastChange === 'start') {
-                     if (endFrame - minFrameSelect > currentFrame) {
-                        setStartFrame(currentFrame);
+                     if (endFrame - minFrameSelect > newCurrentFrame) {
+                        setStartFrame(newCurrentFrame);
                      }
                   } else if (lastChange === 'end') {
                      // setEndFrame(currentFrame);
-                     if (startFrame + minFrameSelect < currentFrame) {
-                        setEndFrame(currentFrame);
+                     if (startFrame + minFrameSelect < newCurrentFrame) {
+                        setEndFrame(newCurrentFrame);
                      }
                   }
                }
@@ -306,6 +316,12 @@ const VideoEditor = ({ videoSrc, setIsStagesSaved, rubric, setRubric }) => {
    const handleDragEnd = () => {
       setIsDraggingStart(false);
       setIsDraggingEnd(false);
+
+      const video = videoRef.current;
+      if (!video) return;
+
+      video.currentTime = currentTime;
+
       // console.log(`Start Frame: ${startFrame}, End Frame: ${endFrame}`);
    };
 

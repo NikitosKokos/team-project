@@ -11,12 +11,18 @@
       color: #f1f1f1;
       margin: 0px 0px 20px 0px;
    }
+
+   &__fileName{
+      font-size: 16px;
+      color: #eee;
+      margin: 12px 0px 0px 0px;
+   }
 }
 
 .uploadButton {
    display: flex;
    align-items: center;
-   background-color: #1A171A;
+   background: rgb(24 24 27);
    color: white;
    border: none;
    border-radius: 27px;
@@ -30,8 +36,7 @@
 
    @media(any-hover: hover){
       &:hover{
-         // background: lighten($color: #1A171A, $amount: 2%);
-         background: #211e21;
+         background: #1F1F23;
       }
    }
    

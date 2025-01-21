@@ -4,6 +4,7 @@ import UploadVideo from './upload-video/UploadVideo';
 import ChooseStudent from './choose-student/ChooseStudent';
 import Rubrics from './rubrics/Rubrics';
 import VideoEditor from './video-editor/VideoEditor';
+import { toast } from 'sonner';
 
 const NewAnalysis = () => {
    const [showVideoEditor, setShowVideoEditor] = useState(false);
@@ -13,17 +14,7 @@ const NewAnalysis = () => {
    const [isUserChosen, setIsUserChosen] = useState(false);
    const [isStagesSaved, setIsStagesSaved] = useState(false);
    const [isLoading, setIsLoading] = useState(false);
-   const [stages, setStages] = useState([
-      { id: 0, name: 'Start' },
-      { id: 1, name: 'Sprint' },
-      { id: 2, name: 'Shot Put' },
-      { id: 3, name: 'Height Jump' },
-      { id: 4, name: 'Hurdles (official spacing)' },
-      { id: 5, name: 'Long Jump' },
-      { id: 6, name: 'Discus Throw' },
-      { id: 7, name: 'Javelin Throw' },
-      { id: 8, name: 'Relay Race' },
-   ]);
+
    const [rubric, setRubric] = useState({
       // id: 2,
       // name: 'Shot Put',
@@ -63,6 +54,25 @@ const NewAnalysis = () => {
    };
 
    const handleSubmit = () => {
+      // toast.success('My success toast', {
+      //    style: {
+      //       background: '#f1f1f1',
+      //    },
+      // });
+
+      // const promise = () =>
+      //    new Promise((resolve) => setTimeout(() => resolve({ name: 'Sonner' }), 2000));
+
+      // toast.promise(promise, {
+      //    loading: 'Loading...',
+      //    success: (data) => {
+      //       return `${data.name} toast has been added`;
+      //    },
+      //    error: 'Error',
+      //    style: {
+      //       background: '#f1f1f1',
+      //    },
+      // });
       if (currentRubric && fileName && isUserChosen) {
          console.log(fileName);
 
@@ -75,7 +85,6 @@ const NewAnalysis = () => {
          const newRubric = { ...rubric, video_id: fileName };
          setRubric(newRubric);
          setIsLoading(true);
-         console.log(newRubric);
 
          // axios logic
          async function getSasForFile(filename) {
@@ -121,7 +130,11 @@ const NewAnalysis = () => {
                {!showVideoEditor ? (
                   <>
                      <ChooseStudent setIsUserChosen={setIsUserChosen} />
-                     <UploadVideo onUpload={handleVideoUpload} setFileName={setFileName} />
+                     <UploadVideo
+                        onUpload={handleVideoUpload}
+                        fileName={fileName}
+                        setFileName={setFileName}
+                     />
                      <button className={s.newAnalysis__submit} onClick={handleSubmit}>
                         Submit
                      </button>
