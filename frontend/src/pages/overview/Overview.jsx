@@ -97,7 +97,7 @@ const Overview = () => {
       <>
          {/* <Leva /> */}
          <div className={s.hero}>
-            <LoginForm isAnimEnded={isAnimEnded} />
+            {/* <LoginForm isAnimEnded={isAnimEnded} /> */}
             <Canvas
                className={s.canvas}
                style={{ height: '100%', width: '100%', overflow: 'hidden' }}>

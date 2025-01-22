@@ -25,9 +25,16 @@
       transition: all .3s ease-in-out;
 
       &_active{
-         background: #3D4046;
+         // background: #3D4046;
+         background: rgb(24 24 27);
          color: #f1f1f1;
-         cursor: default;
+         pointer-events: none;
+      }
+
+      @media(any-hover: hover){
+         &:hover{
+            color: #eee;
+         }
       }
    }
 }

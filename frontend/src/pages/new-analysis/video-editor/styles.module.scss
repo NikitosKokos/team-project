@@ -22,7 +22,6 @@
 
    &__video {
       width: 100%;
-      margin-bottom: 20px;
       position: absolute;
       top: 0;
       left: 0;
@@ -31,6 +30,52 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+   }
+
+   &__controls{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      // background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__playPause{
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(#1A171A, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      svg{
+         path{
+            stroke: transparent;
+         }
+      }
+
+      &.active{
+         // background: red;
+
+         // transition: all .3s ease-in-out;
+         animation: playPause .5s ease-in-out;
+      }
+      @keyframes playPause {
+         0%{
+            opacity: 0.9;
+            transform: scale(1);
+         }
+         100%{
+            opacity: 0;
+            transform: scale(1.6);
+         }
+      }
    }
 
    &__track {

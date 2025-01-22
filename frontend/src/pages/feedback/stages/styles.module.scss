@@ -1,0 +1,60 @@
+.stages{
+   &__list{
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+   }
+
+   &__item{
+      font-size: 20px;
+      font-weight: 600;
+      color: #f1f1f1;
+      background: rgb(24 24 27);
+      border-radius: 24px;
+      padding: 24px 30px;
+      line-height: 1.25;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:before{
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 50%;
+         width: 76%;
+         height: 6px;
+         border-radius: 20px;
+         transform: translate(-50%,-50%);
+      }
+
+
+      &:after{
+         content: '';
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         width: 76%;
+         height: 6px;
+         border-radius: 20px;
+         transform: translate(-50%,50%);
+      }
+
+      &.red{
+         color: #D93030;
+
+         &:before, &:after{
+            background: #D93030;
+         }
+      }
+
+      &.purple{
+         color: #8638EB;
+
+         &:before, &:after{
+            background: #8638EB;
+         }
+      }
+   }
+}
