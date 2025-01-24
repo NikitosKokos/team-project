@@ -1,0 +1,70 @@
+[
+    {
+        "frame": 1,
+        "left_foot_on_plank_no_gaze": false,
+        "right_foot_on_plank_no_gaze": false,
+        "left_foot": [
+            0.40900877118110657,
+            0.7729006409645081
+        ],
+        "right_foot": [
+            0.41045883297920227,
+            0.7326940894126892
+        ],
+        "nose": [
+            0.2823988199234009,
+            0.5102933645248413
+        ]
+    },
+    {
+        "frame": 3,
+        "left_foot_on_plank_no_gaze": false,
+        "right_foot_on_plank_no_gaze": false,
+        "left_foot": [
+            0.4602128267288208,
+            0.8249552845954895
+        ],
+        "right_foot": [
+            0.13367226719856262,
+            0.6697921752929688
+        ],
+        "nose": [
+            0.31066349148750305,
+            0.1587999016046524
+        ]
+    },
+    {
+        "frame": 4,
+        "left_foot_on_plank_no_gaze": false,
+        "right_foot_on_plank_no_gaze": false,
+        "left_foot": [
+            0.41965451836586,
+            0.8077775835990906
+        ],
+        "right_foot": [
+            0.22852057218551636,
+            0.6598579287528992
+        ],
+        "nose": [
+            0.32223743200302124,
+            0.1585489958524704
+        ]
+    },
+    {
+        "frame": 5,
+        "left_foot_on_plank_no_gaze": false,
+        "right_foot_on_plank_no_gaze": false,
+        "left_foot": [
+            0.3812320828437805,
+            0.8364728689193726
+        ],
+        "right_foot": [
+            0.28711798787117004,
+            0.6488276124000549
+        ],
+        "nose": [
+            0.33670368790626526,
+            0.14862212538719177
+        ]
+    }
+]

@@ -1,0 +1,25 @@
+video,label,part
+stage2/user1.mp4,correct
+stage2/user2.mp4,correct
+stage2/user3.mp4,correct
+stage2/user4.mp4,incorrect
+stage2/user5.mp4,correct
+stage2/user6.mp4,incorrect, Bij “klaar” zit het hoofd in verlengde van de romp en kijkt nr de startlijn. incorrect - verlengde van de romp
+stage2/user7.mp4,correct
+stage2/user8.mp4,correct
+stage2/user9.mp4,correct
+stage2/user10.mp4,correct
+stage2/user11.mp4,correct
+stage2/user12.mp4,correct
+stage2/user13.mp4,incorrect
+stage2/user14.mp4,correct
+stage2/user17.mp4,correct
+stage2/user19.mp4,correct
+stage2/user20.mp4,correct
+stage2/user21.mp4,correct
+stage2/user22.mp4,correct
+stage2/user23.mp4,incorrect
+stage2/user100.mp4,correct
+stage2/user101.mp4,correct
+stage2/user102.mp4,incorrect
+stage2/user103.mp4,incorrect

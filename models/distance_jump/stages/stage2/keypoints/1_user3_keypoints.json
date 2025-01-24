@@ -1,0 +1,87 @@
+[
+    {
+        "frame": 1,
+        "left_foot_on_plank_no_gaze": false,
+        "right_foot_on_plank_no_gaze": false,
+        "left_foot": [
+            0.356007844209671,
+            0.4786531329154968
+        ],
+        "right_foot": [
+            0.24592609703540802,
+            0.49423742294311523
+        ],
+        "nose": [
+            0.30571338534355164,
+            0.1992950588464737
+        ]
+    },
+    {
+        "frame": 2,
+        "left_foot_on_plank_no_gaze": false,
+        "right_foot_on_plank_no_gaze": false,
+        "left_foot": [
+            0.3612513542175293,
+            0.47813692688941956
+        ],
+        "right_foot": [
+            0.2454548180103302,
+            0.4597509205341339
+        ],
+        "nose": [
+            0.30362141132354736,
+            0.19678771495819092
+        ]
+    },
+    {
+        "frame": 3,
+        "left_foot_on_plank_no_gaze": false,
+        "right_foot_on_plank_no_gaze": false,
+        "left_foot": [
+            0.36194947361946106,
+            0.4960803687572479
+        ],
+        "right_foot": [
+            0.24951770901679993,
+            0.41406625509262085
+        ],
+        "nose": [
+            0.31066980957984924,
+            0.20842447876930237
+        ]
+    },
+    {
+        "frame": 4,
+        "left_foot_on_plank_no_gaze": false,
+        "right_foot_on_plank_no_gaze": false,
+        "left_foot": [
+            0.3617357015609741,
+            0.5007505416870117
+        ],
+        "right_foot": [
+            0.24923628568649292,
+            0.415258526802063
+        ],
+        "nose": [
+            0.30971288681030273,
+            0.21866574883460999
+        ]
+    },
+    {
+        "frame": 5,
+        "left_foot_on_plank_no_gaze": false,
+        "right_foot_on_plank_no_gaze": false,
+        "left_foot": [
+            0.3378446698188782,
+            0.529145359992981
+        ],
+        "right_foot": [
+            0.2818627655506134,
+            0.40753206610679626
+        ],
+        "nose": [
+            0.3167800307273865,
+            0.23087477684020996
+        ]
+    }
+]

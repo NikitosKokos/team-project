@@ -1,0 +1,11 @@
+{
+    "video": "/Users/cezar/Desktop/Team Project/AI/shotput/stage4/videos/1_user23.mp4",
+    "predicted_scores": [
+        [
+            0.5692494511604309,
+            0.4307505488395691,
+            4.020045130115335e-10
+        ]
+    ],
+    "classified_score": 0
+}

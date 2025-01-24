@@ -1,0 +1,398 @@
+[
+    {
+        "frame": 1,
+        "discus_released": true,
+        "right_index_finger": [
+            0.49675387144088745,
+            0.5392741560935974
+        ],
+        "right_wrist": [
+            0.494498074054718,
+            0.532801628112793
+        ]
+    },
+    {
+        "frame": 2,
+        "discus_released": true,
+        "right_index_finger": [
+            0.500214159488678,
+            0.4834674894809723
+        ],
+        "right_wrist": [
+            0.49970054626464844,
+            0.4907090365886688
+        ]
+    },
+    {
+        "frame": 3,
+        "discus_released": true,
+        "right_index_finger": [
+            0.5064659714698792,
+            0.42258819937705994
+        ],
+        "right_wrist": [
+            0.5060661435127258,
+            0.4275525212287903
+        ]
+    },
+    {
+        "frame": 4,
+        "discus_released": false,
+        "right_index_finger": [
+            0.5029076933860779,
+            0.4105289578437805
+        ],
+        "right_wrist": [
+            0.5032948851585388,
+            0.41887712478637695
+        ]
+    },
+    {
+        "frame": 5,
+        "discus_released": true,
+        "right_index_finger": [
+            0.5125669240951538,
+            0.42188847064971924
+        ],
+        "right_wrist": [
+            0.5112291574478149,
+            0.4240356385707855
+        ]
+    },
+    {
+        "frame": 6,
+        "discus_released": true,
+        "right_index_finger": [
+            0.5070635676383972,
+            0.4084690809249878
+        ],
+        "right_wrist": [
+            0.5067115426063538,
+            0.4109955132007599
+        ]
+    },
+    {
+        "frame": 7,
+        "discus_released": false,
+        "right_index_finger": [
+            0.5101587176322937,
+            0.5068117380142212
+        ],
+        "right_wrist": [
+            0.5143954157829285,
+            0.49904999136924744
+        ]
+    },
+    {
+        "frame": 8,
+        "discus_released": false,
+        "right_index_finger": [
+            0.511324942111969,
+            0.5108218789100647
+        ],
+        "right_wrist": [
+            0.5151923894882202,
+            0.5010279417037964
+        ]
+    },
+    {
+        "frame": 9,
+        "discus_released": false,
+        "right_index_finger": [
+            0.5119333267211914,
+            0.5131630301475525
+        ],
+        "right_wrist": [
+            0.5144838094711304,
+            0.5059735774993896
+        ]
+    },
+    {
+        "frame": 10,
+        "discus_released": false,
+        "right_index_finger": [
+            0.5176928639411926,
+            0.5116135478019714
+        ],
+        "right_wrist": [
+            0.5195690989494324,
+            0.5040349960327148
+        ]
+    },
+    {
+        "frame": 11,
+        "discus_released": false,
+        "right_index_finger": [
+            0.519315242767334,
+            0.5140163898468018
+        ],
+        "right_wrist": [
+            0.5199984908103943,
+            0.505895733833313
+        ]
+    },
+    {
+        "frame": 12,
+        "discus_released": true,
+        "right_index_finger": [
+            0.49895745515823364,
+            0.4068868160247803
+        ],
+        "right_wrist": [
+            0.4969349503517151,
+            0.40650632977485657
+        ]
+    },
+    {
+        "frame": 13,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4914450943470001,
+            0.39573153853416443
+        ],
+        "right_wrist": [
+            0.4947338402271271,
+            0.4012535512447357
+        ]
+    },
+    {
+        "frame": 14,
+        "discus_released": false,
+        "right_index_finger": [
+            0.49616727232933044,
+            0.4130887985229492
+        ],
+        "right_wrist": [
+            0.4980188310146332,
+            0.4168000817298889
+        ]
+    },
+    {
+        "frame": 15,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4986920654773712,
+            0.4280850291252136
+        ],
+        "right_wrist": [
+            0.5003777146339417,
+            0.42987874150276184
+        ]
+    },
+    {
+        "frame": 16,
+        "discus_released": false,
+        "right_index_finger": [
+            0.49219170212745667,
+            0.39983558654785156
+        ],
+        "right_wrist": [
+            0.4956756830215454,
+            0.40434539318084717
+        ]
+    },
+    {
+        "frame": 17,
+        "discus_released": false,
+        "right_index_finger": [
+            0.49186474084854126,
+            0.3975101113319397
+        ],
+        "right_wrist": [
+            0.49514588713645935,
+            0.4019612669944763
+        ]
+    },
+    {
+        "frame": 18,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4657207429409027,
+            0.3741365969181061
+        ],
+        "right_wrist": [
+            0.4712730944156647,
+            0.37850284576416016
+        ]
+    },
+    {
+        "frame": 19,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4638974368572235,
+            0.3726867735385895
+        ],
+        "right_wrist": [
+            0.46911969780921936,
+            0.3769872784614563
+        ]
+    },
+    {
+        "frame": 20,
+        "discus_released": false,
+        "right_index_finger": [
+            0.46437376737594604,
+            0.3721123933792114
+        ],
+        "right_wrist": [
+            0.4698437452316284,
+            0.37719690799713135
+        ]
+    },
+    {
+        "frame": 21,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4646679759025574,
+            0.3716849386692047
+        ],
+        "right_wrist": [
+            0.4702445864677429,
+            0.37773582339286804
+        ]
+    },
+    {
+        "frame": 22,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4641062319278717,
+            0.37146371603012085
+        ],
+        "right_wrist": [
+            0.4694976508617401,
+            0.3769994378089905
+        ]
+    },
+    {
+        "frame": 23,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4650530517101288,
+            0.37193602323532104
+        ],
+        "right_wrist": [
+            0.47065800428390503,
+            0.37775734066963196
+        ]
+    },
+    {
+        "frame": 24,
+        "discus_released": false,
+        "right_index_finger": [
+            0.45631417632102966,
+            0.3763672411441803
+        ],
+        "right_wrist": [
+            0.46374252438545227,
+            0.38148829340934753
+        ]
+    },
+    {
+        "frame": 25,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4556073546409607,
+            0.3773255944252014
+        ],
+        "right_wrist": [
+            0.4628930389881134,
+            0.38222411274909973
+        ]
+    },
+    {
+        "frame": 26,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4555376470088959,
+            0.3772696554660797
+        ],
+        "right_wrist": [
+            0.46294429898262024,
+            0.3820716142654419
+        ]
+    },
+    {
+        "frame": 27,
+        "discus_released": false,
+        "right_index_finger": [
+            0.455592542886734,
+            0.37732863426208496
+        ],
+        "right_wrist": [
+            0.4627811014652252,
+            0.3820233941078186
+        ]
+    },
+    {
+        "frame": 28,
+        "discus_released": false,
+        "right_index_finger": [
+            0.45597392320632935,
+            0.37718117237091064
+        ],
+        "right_wrist": [
+            0.4628601372241974,
+            0.38216549158096313
+        ]
+    },
+    {
+        "frame": 29,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4556162655353546,
+            0.37740057706832886
+        ],
+        "right_wrist": [
+            0.46274182200431824,
+            0.3824528157711029
+        ]
+    },
+    {
+        "frame": 30,
+        "discus_released": false,
+        "right_index_finger": [
+            0.46886342763900757,
+            0.40949320793151855
+        ],
+        "right_wrist": [
+            0.4717475175857544,
+            0.40690723061561584
+        ]
+    },
+    {
+        "frame": 31,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4709753394126892,
+            0.41286683082580566
+        ],
+        "right_wrist": [
+            0.47372525930404663,
+            0.41015586256980896
+        ]
+    },
+    {
+        "frame": 32,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4710767865180969,
+            0.4136262536048889
+        ],
+        "right_wrist": [
+            0.47392168641090393,
+            0.41098862886428833
+        ]
+    },
+    {
+        "frame": 33,
+        "discus_released": false,
+        "right_index_finger": [
+            0.4713951647281647,
+            0.4137163460254669
+        ],
+        "right_wrist": [
+            0.47438135743141174,
+            0.41107165813446045
+        ]
+    }
+]

@@ -1,0 +1,11 @@
+video,label
+stage1/user1.mp4,incorrect
+stage2/user2.mp4,correct
+stage2/user3.mp4,correct
+stage2/user5.mp4,correct
+stage2/user8.mp4,correct
+stage2/user12.mp4,incorrect
+stage2/user13.mp4,correct
+stage2/user19.mp4,correct
+stage2/user22.mp4,incorrect
+stage2/user23.mp4,correct

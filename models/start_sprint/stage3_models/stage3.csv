@@ -1,0 +1,24 @@
+video,label,part
+stage3/user1.mp4,correct
+stage3/user2.mp4,incorrect
+stage3/user3.mp4,incorrect
+stage3/user4.mp4,incorrect
+stage3/user5.mp4,correct
+stage3/user6.mp4,incorrect,Bij “start” worden beide bn krachtig afgezet. Er is een evenwichtsverlies naar voor. incorrect - evenwichtsverlies naar voor
+stage3/user7.mp4,correct
+stage3/user8.mp4,correct
+stage3/user9.mp4,correct
+stage3/user10.mp4,correct
+stage3/user11.mp4,incorrect
+stage3/user12.mp4,correct
+stage3/user13.mp4,correct
+stage3/user14.mp4,incorrect,Bij “start” worden beide bn krachtig afgezet. Er is een evenwichtsverlies naar voor. incorrect - evenwichtsverlies naar voor
+stage3/user17.mp4,correct
+stage3/user19.mp4,correct
+stage3/user20.mp4,incorrect
+stage3/user21.mp4,correct
+stage3/user22.mp4,correct
+stage3/user100.mp4,incorrect
+stage3/user101.mp4,correct
+stage3/user102.mp4,correct
+
